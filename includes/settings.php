@@ -6,13 +6,13 @@
  * Note       : Please do not commit your credentials
  */
 $_settings['reCaptcha'] = array();
-$_settings['reCaptcha']['client_key'] = getenv('client_key') ?? '';
-$_settings['reCaptcha']['server_key'] = getenv('server_key') ?? '';
+$_settings['reCaptcha']['client_key'] = isset(getenv('client_key')) ? getenv('client_key') : '';
+$_settings['reCaptcha']['server_key'] = isset(getenv('server_key')) ? getenv('server_key') : '';
 
 $_settings['twilio'] = array();
-$_settings['twilio']['account_sid'] = getenv('account_sid') ?? '';
-$_settings['twilio']['auth_token'] = getenv('auth_token') ?? '';
-$_settings['twilio']['number'] = getenv('number') ?? '';
+$_settings['twilio']['account_sid'] = isset(getenv('account_sid')) ?  getenv('account_sid') : '';
+$_settings['twilio']['auth_token'] = isset(getenv('auth_token')) ? getenv('auth_token') : '';
+$_settings['twilio']['number'] = isset(getenv('number')) ?  getenv('number') : '';
 
 //'heroku' for production, 'debug' for running locally
 $_settings['deploy_mode'] = 'heroku';
