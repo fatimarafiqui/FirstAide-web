@@ -7,4 +7,5 @@
 		$_settings['db']['password'],
 		$_settings['db']['database']
 	) or die("Connection failed");
+	var_dump($connection, 'hhiihihihiiiiiiihihihihih!!!!!!!!!!!!!!!!!', $connection ? 'true' : 'false')
 ?>
