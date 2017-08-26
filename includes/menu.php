@@ -199,22 +199,27 @@ if (FirstAide\Utils::getPageProperty($page['type'], FirstAide\Utils::PROPERTY_ME
         'text' => 'Settings',
         'url' => FirstAide\Router::getPageUrl(
             FirstAide\Router::HOME,
-            FirstAide\Router::PAGE_ADDED_SOON
+            FirstAide\Router::PAGE_SETTINGS
         )
     );
+
+    $user_name = 'Username';
+    if (isset($UserObj)) {
+        $user_name =  $UserObj->getName() != ''
+            ? $UserObj->getName() : $user_name;
+    }
+
     $menu['items'][] = array(
-        'text' => 'Logged in as: Username',
+        'text' => 'Logged in as: ' . $user_name,
         'url' => FirstAide\Router::getPageUrl(
             FirstAide\Router::HOME,
-            FirstAide\Router::PAGE_ADDED_SOON
+            FirstAide\Router::PAGE_SETTINGS
         )
     );
     $menu['items'][] = array(
+        'elementId' => 'logout',
         'text' => 'Logout',
-        'url' => FirstAide\Router::getPageUrl(
-            FirstAide\Router::HOME,
-            FirstAide\Router::PAGE_ADDED_SOON
-        )
+        'url' => '#'
     );
 
     $page['menu'] = $menu;
